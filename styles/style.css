@@ -2,28 +2,31 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 10px;
+  /* max-width: 1024px; */
   background-image: url(../images/cover-image-dark.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   text-align: left;
+  margin: 0;
 }
 img {
   width: 100%;
 }
 .header {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  min-height: 668px;
+  max-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, minmax(min-content, auto));
   grid-template-areas:
     "decoration decoration decoration"
     "nav nav nav"
     "title title title"
-    "zero zero text";
+    "text text text";
 }
 
 .header::before {
@@ -38,8 +41,6 @@ img {
 }
 
 .decoration {
-  position: relative;
-  min-width: 52px;
   font-family: var(--font);
   font-weight: var(--medium);
   font-size: var(--font-size-normal);
@@ -49,7 +50,6 @@ img {
   display: grid;
   justify-content: end;
   grid-area: decoration;
-  visibility: visible;
 }
 
 .decoration::before {
@@ -69,17 +69,18 @@ img {
 }
 
 .header__theme-menu {
+  width: 100%;
   grid-area: nav;
   display: grid;
   justify-content: end;
   padding-block-start: 26px;
-  padding-inline-end: 6px;
 }
 
 .header__theme-menu-list {
   display: grid;
   list-style-type: none;
-  gap: 15px;
+  gap: 16px;
+  padding-inline-end: 7px;
 }
 
 .header__theme-menu-button {
@@ -139,8 +140,6 @@ img {
   font-size: var(--font-size-normal);
   font-weight: var(--hard);
   line-height: var(--line-height-paragraph);
-  min-width: 355px;
-  max-width: 491px;
   min-height: 117px;
   grid-area: text;
   justify-items: end;
@@ -153,9 +152,13 @@ img {
   height: 25px;
   border-bottom: 1px solid var(--text-color);
   border-left: 1px solid var(--text-color);
-  position: absolute;
-  left: 10px;
-  top: 632px;
+  position: relative;
+  bottom: 26px;
+}
+
+.main {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
 }
 
 .main__article-why {
@@ -168,7 +171,7 @@ img {
   font-weight: var(--hard);
   font-size: var(--font-size-normal);
   line-height: var(--line-height-paragraph);
-  margin: 50px 0 0;
+  margin: 24px 0 0;
 }
 
 .main__article-text {
@@ -205,6 +208,14 @@ img {
 
 .main__article-link:focus-visible {
   outline: 1px solid var(--paragraph-text-color);
+}
+
+.main__article-title-what {
+  padding-block-start: 26px;
+}
+
+.main__article-how {
+  padding-block-start: 26px;
 }
 
 .main__galery-title {
@@ -244,6 +255,7 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 668px;
+  max-height: 100vh;
 }
 .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
@@ -262,9 +274,6 @@ img {
 }
 
 @media (min-width: 768px) {
-  .page {
-    padding: 0px 20px;
-  }
   .header::before {
     top: 20px;
     right: 20px;
@@ -274,6 +283,9 @@ img {
     min-height: 768px;
     max-height: 100vh;
     padding-block-end: 210px;
+  }
+  .decoration {
+    padding-inline-end: 11px;
   }
 
   .decoration__text {
@@ -289,6 +301,11 @@ img {
     padding-inline-end: 5px;
   }
 
+  .header__theme-menu-list {
+    gap: 15px;
+    padding-inline-end: 17px;
+  }
+
   .header__title {
     font-size: 120px;
     text-align: start;
@@ -296,13 +313,15 @@ img {
     margin: 64px 10px 64px -10px;
   }
   .header__accent-text {
-    max-width: 364px;
-    margin-block-start: 97px;
+    margin-block-start: 99px;
     margin-block-end: 223px;
+    grid-column-start: 2;
+    margin-inline-start: 125px;
+    margin-inline-end: 10px;
   }
   .header::after {
-    left: 20px;
-    top: 978px;
+    left: 10px;
+    top: 353px;
   }
 
   .main {
@@ -312,27 +331,33 @@ img {
     grid-template-columns: minmax(256px, 314px) minmax(472px, 984px);
     grid-template-rows: auto;
     margin-block-end: 60px;
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
   }
 
   .main__article-title {
     grid-row-start: 1;
     grid-row-end: 5;
-    margin: 0px 0;
     max-width: 230px;
-    margin: 21px 0 0 10px;
+    margin: 20px 0 0;
   }
   .main__article-what {
+    padding-inline-end: 10px;
     padding-inline-start: 10px;
+
     margin-block-end: 59px;
   }
 
   .main__article-title-what {
-    margin: 21px 0 0 0;
+    padding-block-start: 0px;
   }
   .main__article-how {
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
     display: grid;
     grid-template-columns: minmax(256px, 314px) minmax(472px, 984px);
     margin-block-end: 25px;
+    padding-block-start: 0px;
   }
 
   .main__article-title-how {
@@ -351,6 +376,8 @@ img {
       "sound street street";
     gap: 20px;
     padding-block-end: 126px;
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
   }
 
   .main__galery-title {
@@ -404,13 +431,10 @@ img {
 }
 
 @media (min-width: 1024px) {
-  .page {
-    padding: 0px 10px;
-  }
-
   .header {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     grid-template-rows: repeat(3, 1fr);
+    padding-block-end: 0px;
   }
   .header__theme-menu {
     grid-column-start: 2;
@@ -458,7 +482,7 @@ img {
   }
 
   .main__article-why {
-    column-gap: 32px;
+    column-gap: 20px;
   }
 
   .main__article-what {
@@ -480,7 +504,7 @@ img {
   }
 
   .main__article-how {
-    column-gap: 32px;
+    column-gap: 20px;
   }
   .main__galery-title {
     margin-top: 55px;
@@ -497,7 +521,7 @@ img {
   }
 
   .footer {
-    min-height: 768px;
+    min-height: 555px;
   }
 
   .footer__title {
