@@ -296,14 +296,14 @@ img {
   }
 
   .header__theme-menu {
-    padding-block-start: 123px;
-    padding-block-end: 100px;
+    padding-block-start: 136px;
+    padding-block-end: 116px;
     padding-inline-end: 5px;
   }
 
   .header__theme-menu-list {
-    gap: 15px;
-    padding-inline-end: 17px;
+    gap: 17px;
+    padding-inline-end: 12px;
   }
 
   .header__title {
@@ -333,6 +333,7 @@ img {
     margin-block-end: 60px;
     padding-inline-end: 10px;
     padding-inline-start: 10px;
+    padding-block-start: 209px;
   }
 
   .main__article-title {
@@ -356,7 +357,7 @@ img {
     padding-inline-start: 10px;
     display: grid;
     grid-template-columns: minmax(256px, 314px) minmax(472px, 984px);
-    margin-block-end: 25px;
+    margin-block-end: 31px;
     padding-block-start: 0px;
   }
 
@@ -374,8 +375,8 @@ img {
       "sun sun ice"
       "sound book ice"
       "sound street street";
-    gap: 20px;
-    padding-block-end: 126px;
+    gap: 10px;
+    padding-block-end: 142px;
     padding-inline-end: 10px;
     padding-inline-start: 10px;
   }
@@ -452,10 +453,8 @@ img {
 
   .header__theme-menu-list {
     display: flex;
-    min-width: 230px;
-
-    justify-content: space-around;
-    padding: 5px 50px;
+       gap: 25px;
+       padding: 22px 59px;
   }
 
   .header__title {
@@ -483,6 +482,7 @@ img {
 
   .main__article-why {
     column-gap: 20px;
+    padding-block-start: 0;
   }
 
   .main__article-what {
@@ -507,12 +507,13 @@ img {
     column-gap: 20px;
   }
   .main__galery-title {
-    margin-top: 55px;
+    margin-block-start: 50px;
     row-gap: 20px;
   }
   .main__galery {
     row-gap: 10px;
     column-gap: 15px;
+    padding-block-end: 125px;
   }
 
   .footer::before {
