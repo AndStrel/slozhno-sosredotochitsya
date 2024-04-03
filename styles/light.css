@@ -5,8 +5,8 @@
   --accent-text-color: #353430;
   --paragraph-text-color: #353430; 
   --outline-color: rgba(50, 49, 45, 0.4);
-  
-}
+  }
+
 .theme_light .decoration {
   visibility: hidden;
 }
@@ -40,5 +40,4 @@
   .decoration {
     visibility: hidden
   }   
-
 }

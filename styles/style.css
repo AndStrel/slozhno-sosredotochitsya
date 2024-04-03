@@ -4,7 +4,6 @@
   background-size: cover;
   background-attachment: fixed;
   text-align: left;
-  margin: 0;
   max-width: 1024px;
   margin: auto;
 }
@@ -34,7 +33,7 @@ button {
 .header {
   padding-inline-start: 10px;
   padding-inline-end: 10px;
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 491px));
   grid-template-rows: repeat(4, minmax(min-content, auto));
@@ -263,7 +262,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
