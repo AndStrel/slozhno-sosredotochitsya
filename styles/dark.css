@@ -1,33 +1,22 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-:root.theme_dark {
+.theme_dark {
   --accent-color: #ff0070;
   --title-color: #db00ff;
   --text-color: #ff0070;
   --accent-text-color: #000028;
   --paragraph-text-color: rgb(241, 178, 206);
-  --font: "IBM Plex Mono", "sans-serif";
-  --font-size-normal: 18px;
-  --medium: 400;
-  --hard: 700;
-  --line-height-paragraph: 23.4px;
+  --outline-color: rgba(255, 0, 112, 0.4);
+   
 }
 
 .page.theme_dark {
   background-image: url(../images/cover-image-dark.png);
 
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
 }
 
-.decoration {
+.theme_dark .decoration {
   visibility: visible;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,9 +25,15 @@
     --text-color: #ff0070;
     --accent-text-color: #000028;
     --paragraph-text-color: rgb(241, 178, 206);
+    --outline-color: rgba(255, 0, 112, 0.4);
+     
   }
 
-  .decoration {
-    visibility: visible;
-  }
+.page {
+  background-image: url(../images/cover-image-dark.png);
 }
+
+
+}
+
+
