@@ -5,7 +5,7 @@
   --accent-text-color: #353430;
   --paragraph-text-color: #353430; 
   --outline-color: rgba(50, 49, 45, 0.4);
-  }
+}
 
 .theme_light .decoration {
   visibility: hidden;
@@ -23,15 +23,13 @@
 @media (prefers-color-scheme: light) {
 
   :root {
-
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
     --text-color: rgba(53, 52, 48, 1);
     --accent-text-color: #353430;
     --paragraph-text-color: #353430;
     --outline-color: rgba(255, 0, 112, 0.4);
- 
-    }
+  }
 
   .page {
  background-image: url(../images/cover-image-light.png);

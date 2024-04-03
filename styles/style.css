@@ -436,6 +436,7 @@ button {
     grid-template-rows: repeat(3, 1fr);
     padding-block-end: 0px;
   }
+  
   .header::after {
     top: 740px;
   }
@@ -461,13 +462,13 @@ button {
   .decoration__text {
     padding-inline-end: 38px;
   }
+
   .header__title {
     grid-row-start: 3;
   }
 
   .header__accent-text.accent-text {
-    margin-block-start: 126px;
-    margin-block-end: 150px;
+    margin-block-start: 135px;
     margin-inline-start: 168px;
     max-width: 491px;
     max-height: 71px;
@@ -475,7 +476,9 @@ button {
 
   .main {
     padding-inline-end: 0;
+    padding-block-start: 40px;
   }
+
   .main__article-title {
     max-width: 314px;
   }
