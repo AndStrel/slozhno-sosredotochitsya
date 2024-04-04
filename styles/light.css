@@ -3,7 +3,7 @@
   --title-color: #ffc2e6;
   --text-color: rgba(53, 52, 48, 1);
   --accent-text-color: #353430;
-  --paragraph-text-color: #353430; 
+  --paragraph-text-color: #353430;
   --outline-color: rgba(50, 49, 45, 0.4);
 }
 
@@ -13,15 +13,9 @@
 
 .page.theme_light {
   background-image: url(../images/cover-image-light.png);
-
 }
 
-
-
-
-
 @media (prefers-color-scheme: light) {
-
   :root {
     --accent-color: #ff8dcb;
     --title-color: #ffc2e6;
@@ -32,10 +26,10 @@
   }
 
   .page {
- background-image: url(../images/cover-image-light.png);
+    background-image: url(../images/cover-image-light.png);
   }
 
   .decoration {
-    visibility: hidden
-  }   
+    visibility: hidden;
+  }
 }

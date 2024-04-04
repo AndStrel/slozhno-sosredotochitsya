@@ -31,13 +31,16 @@ button {
 }
 
 .header {
-  position: relative; 
+  position: relative;
   padding-inline-start: 10px;
   padding-inline-end: 10px;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 491px));
-  grid-template-rows: 75px minmax(164px, max-content) minmax(min-content, max-content) minmax(auto, min-content);
+  grid-template-rows: 75px minmax(164px, max-content) minmax(
+      min-content,
+      max-content
+    ) minmax(auto, min-content);
   grid-template-areas:
     "decoration decoration decoration"
     "nav nav nav"
@@ -93,7 +96,6 @@ button {
   justify-content: end;
   /* padding-block-start: 40px;
   padding-block-end: 51px; */
-
 }
 
 .header__theme-menu-list {
@@ -164,7 +166,7 @@ button {
   background-color: var(--accent-color);
   font-size: var(--font-size-normal);
   font-weight: var(--hard);
-  line-height: 21.4px;
+  line-height: 23.4px;
   max-width: 355px;
   max-height: 117px;
   padding-block-end: 7px;
@@ -264,12 +266,13 @@ button {
 }
 
 .footer {
-  position: relative; 
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
+
 .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -443,7 +446,7 @@ button {
     /* grid-template-rows: 50px auto ; */
     padding-block-end: 0px;
   }
-  
+
   .header__theme-menu {
     grid-column-start: 2;
     grid-column-end: 3;
