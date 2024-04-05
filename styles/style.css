@@ -19,7 +19,7 @@ button {
   cursor: pointer;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   width: 25px;
   height: 25px;
@@ -30,25 +30,7 @@ button {
   right: 10px;
 }
 
-.header {
-  position: relative;
-  padding-inline-start: 10px;
-  padding-inline-end: 10px;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 491px));
-  grid-template-rows: 75px minmax(164px, max-content) minmax(
-      min-content,
-      max-content
-    ) minmax(auto, min-content);
-  grid-template-areas:
-    "decoration decoration decoration"
-    "nav nav nav"
-    "title title title"
-    "text text text";
-}
-
-.header::after {
+.decorated-zone::after {
   content: "";
   width: 25px;
   height: 25px;
@@ -57,6 +39,21 @@ button {
   position: absolute;
   bottom: 30px;
   left: 10px;
+}
+
+.header {
+  position: relative;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 491px));
+  grid-template-rows: min-content 1fr min-content 1fr;
+  grid-template-areas:
+    "decoration decoration decoration"
+    "nav nav nav"
+    "title title title"
+    "text text text";
 }
 
 .decoration {
@@ -94,8 +91,8 @@ button {
   grid-area: nav;
   display: grid;
   justify-content: end;
-  /* padding-block-start: 40px;
-  padding-block-end: 51px; */
+  padding-block-start: 40px;
+  /* padding-block-end: 51px; */
 }
 
 .header__theme-menu-list {
@@ -150,6 +147,13 @@ button {
   padding-block-end: 55px;
 }
 
+.header__accent-paragraph {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  justify-content: end;
+}
+
 .accent-text {
   font-family: var(--font);
   color: var(--accent-text-color);
@@ -169,10 +173,6 @@ button {
   line-height: 23.4px;
   max-width: 355px;
   max-height: 117px;
-  padding-block-end: 7px;
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
   margin: 0;
 }
 
@@ -254,15 +254,14 @@ button {
   margin-top: 50px;
 }
 
-.footer::before {
-  content: "";
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--text-color);
-  border-left: 1px solid var(--text-color);
-  position: absolute;
-  left: 10px;
-  bottom: 20px;
+.footer.decorated-zone::before {
+  top: 30px;
+  right: 20px;
+}
+
+.footer.decorated-zone::after {
+  bottom: 10px;
+  left: 20px;
 }
 
 .footer {
@@ -277,21 +276,13 @@ button {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.footer::after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--text-color);
-  border-right: 1px solid var(--text-color);
-  position: absolute;
-  top: 20px;
-  right: 10px;
-}
-
 @media (min-width: 768px) {
   .header::before {
     top: 20px;
     right: 20px;
+  }
+  .header {
+    grid-template-rows: min-content 1fr min-content 1fr;
   }
 
   .header::after {
@@ -305,10 +296,10 @@ button {
   }
 
   .header__theme-menu {
-    padding-block-start: 116px;
-    padding-block-end: 129px;
-
+    display: grid;
+    padding-block-start: 0;
     padding-inline-end: 10px;
+    align-items: center;
   }
 
   .header__theme-menu-list {
@@ -320,7 +311,7 @@ button {
   }
 
   .header__title {
-    padding-block-start: 50px;
+    padding-block-start: 23px;
     text-indent: -10px;
   }
 
@@ -425,25 +416,15 @@ button {
     object-fit: cover;
   }
 
-  .footer::before {
-    left: 20px;
-    bottom: 10px;
-  }
-
   .footer__title {
     margin-block-start: 14px;
-  }
-
-  .footer::after {
-    right: 20px;
-    top: 30px;
   }
 }
 
 @media (min-width: 1024px) {
   .header {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
-    /* grid-template-rows: 50px auto ; */
+    grid-template-rows: 1fr min-content 1fr;
     padding-block-end: 0px;
   }
 
@@ -451,8 +432,10 @@ button {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    max-height: 150px;
+    /* max-height: 150px; */
     padding: 0px;
+    display: grid;
+    align-items: start;
   }
 
   .header__theme-menu-list {
@@ -471,12 +454,12 @@ button {
   }
 
   .header__title {
-    padding-block-start: 98px;
+    padding-block-start: 90px;
   }
 
   .header__accent-text.accent-text {
-    margin-block-start: 76px;
-    margin-inline-start: 168px;
+    margin-block-start: 70px;
+    margin-block-end: 136px;
     max-width: 491px;
     max-height: 69px;
   }
@@ -526,5 +509,9 @@ button {
     gap: 20px;
 
     padding-inline-end: 20px;
+  }
+
+  .footer__title {
+    margin-block-start: 20px;
   }
 }
